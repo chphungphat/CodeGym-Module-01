@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking Text</title>
+</head>
+<body style="text-align: center;">
+    <h1>Type anything slowly</h1>
+    <textarea name="typing" id="typing" cols="70" rows="30" onkeydown="typeAWord()"></textarea>
+    <script>
+        let def = "Bạn có nhận thức đuợc đây là một mẫu typing giả không. Kiểu bạn gõ kiểu gì thì nó cũng chỉ ra một chuỗi ký tự định sẵn. Bạn biết nhưng bạn vẫn cố gõ sao? Tại sao thế? Bạn là ai? Mà tôi là ai? Tôi chỉ biết rằng bạn là thằng ngốc";
+        let str = "";
+        function typeAWord() {
+            let text = document.getElementById("typing").value;
+            let j = text.length;
+            if (j > 0) {
+                for (let i = 1; i <= j; i++) {
+                    str += def[i];
+                    if (i === def.length - 1) {
+                        document.getElementById("typing").value= "";
+                        str = "";
+                    }
+                }
+            }
+            document.getElementById("typung").value = str;
+            str = "";
+            setTimeout("typeAWord()", 1)
+        }
+    </script>
+</body>
+</html>

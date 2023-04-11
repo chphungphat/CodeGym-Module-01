@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Minimum</title>
+</head>
+<body>
+    <p>arr1: [3, 5, 1, 8, -3, 7, 8]</p>
+    <p id="arr1"></p>
+    <p>arr2: [7, 12, 6, 9, 20, 56, 89]</p>
+    <p id="arr2"></p>
+    <p>arr3: []</p>
+    <p id="arr3"></p>
+    <p>arr4: [0, 0, 0, 0, 0, 0]</p>
+    <p id="arr4"></p>
+
+    <script>
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89];
+        let arr3 = [];
+        let arr4 = [0, 0, 0, 0, 0, 0];
+        function findMin(arr) {
+            if (arr.length == 0) {
+                return "empty array";
+            } else {
+                let min = arr[0];
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min = arr[i];
+                    }
+                }
+                return min;
+            }
+        }
+        document.getElementById("arr1").innerHTML = findMin(arr1);
+        document.getElementById("arr2").innerHTML = findMin(arr2);
+        document.getElementById("arr3").innerHTML = findMin(arr3);
+        document.getElementById("arr4").innerHTML = findMin(arr4);
+    </script>
+</body>
+</html>

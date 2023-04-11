@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+<body>
+    <h2>Bài 1</h2>
+    <input type="button" value="Click to run ex1" id="btn_ex1">
+    <h2>Bài 2</h2>
+    <input type="button" value="Click to run ex2" id="btn_ex2">
+    <h2>Bài 3</h2>
+    <input type="button" value="Click to run ex3" id="btn_ex3">
+    <h2>Bài 4</h2>
+    <input type="button" value="Click to run ex4" id="btn_ex4">
+    <h2>Bài 5</h2>
+    <input type="button" value="Click to run ex5" id="btn_ex5">
+    <h2>Bài 6</h2>
+    <input type="button" value="Click to run ex6" id="btn_ex6">
+    <h2>Bài 7</h2>
+    <input type="button" value="Click to run ex7" id="btn_ex7">
+    <h2>Bài 8</h2>
+    <input type="button" value="Click to run ex8" id="btn_ex8">
+    <h2>Bài 9</h2>
+    <input type="button" value="Click to run ex9" id="btn_ex9">
+    <h2>Bài 10</h2>
+    <input type="button" value="Click to run ex10" id="btn_ex10">
+    <h2>Bài 11</h2>
+    <input type="button" value="Click to run ex11" id="btn_ex11">
+    <h2>Bài 12</h2>
+    <input type="button" value="Click to run ex12" id="btn_ex12">
+    <script>
+        //Bài 1
+        function CtoF() {
+            let a = 0;
+            while (true){
+                a = prompt("Nhập độ C");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = a * 9/5 + 32;
+            alert(a + " độ C = " + result + " độ F")
+        }
+        document.getElementById("btn_ex1").addEventListener("click", CtoF);
+
+        //Bài 2
+        function MtoF() {
+            let a = 0;
+            while (true){
+                a = prompt("Nhập số mét");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = a * 3.2888;
+            alert(a + " mét = " + result + " feet")
+        }
+        document.getElementById("btn_ex2").addEventListener("click", MtoF);
+
+        //Bài 3
+        function areaOfSquare() {
+            let a = 0;
+            while (true){
+                a = prompt("Nhập độ dài cạnh a");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = a * a;
+            alert("Diện tích hình vuông độ dài cạnh " + a + " mét là " + result + " mét vuông")
+        }
+        document.getElementById("btn_ex3").addEventListener("click", areaOfSquare);
+
+        //Bài 4
+        function areaOfRectangle() {
+            let a = 0;
+            let b = 0
+            while (true){
+                a = prompt("Nhập độ dài cạnh a");
+                b = prompt("Nhập độ dài cạnh b")
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = a * b;
+            alert("Diện tích hình chữ nhật độ dài cạnh " + a + "x" + b + " là " + result + " mét vuông")
+        }
+        document.getElementById("btn_ex4").addEventListener("click", areaOfRectangle);
+
+        //Bài 5
+        function areaOfTriagle() {
+            let a = 0;
+            let b = 0
+            while (true){
+                a = prompt("Nhập độ dài cạnh a");
+                b = prompt("Nhập độ dài cạnh b")
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = (a * b)/2;
+            alert("Diện tích hình tam giác vuông độ dài cạnh " + a + "x" + b + " là " + result + " mét vuông")
+        }
+        document.getElementById("btn_ex4").addEventListener("click", areaOfTriagle);
+
+        //Bài 6
+        function linearEquation() {
+            let a = 0;
+            let b = 0;
+            while (true) {
+                a = prompt("Nhập vào số a");
+                b = prompt("Nhập vào số b");
+                if (isNaN(a) || isNaN(b)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = (-1*b)/a;
+            alert("Phương trình bậc nhất " + a + "x + " + b + " = 0 là x = " + result);
+        }
+        document.getElementById("btn_ex6").addEventListener("click", linearEquation);
+
+        //Bài 7
+        function quadEquation() {
+            let a = 0;
+            let b = 0;
+            let c = 0;
+            while (true) {
+                a = prompt("Nhập vào số a");
+                b = prompt("Nhập vào số b");
+                c = prompt("Nhập vào số c");
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let delta = b*b - 4*a*c;
+            if (delta < 0) {
+                alert("Phương trình " + a + "x^2 + " + b + "x + " + c + " = 0 vô nghiệm");
+            } else if (delta == 0) {
+                let result = (-1*b)/(2*a);
+                alert("Phương trình " + a + "x^2 + " + b + "x + " + c + " = 0 có nghiệm là x = " + result);
+            } else {
+                let result1 = (-1*b + Math.sqrt(delta))/(2*a);
+                let result2 = (-1*b - Math.sqrt(delta))/(2*a);
+                alert("Phương trình " + a + "x^2 + " + b + "x + " + c + " = 0 có nghiệm là x1 = " + result1 + ", x2 = " + result2);
+            }
+        }
+        document.getElementById("btn_ex7").addEventListener("click", quadEquation);
+
+        //Bài 8
+        function isAge() {
+            let a = 0;
+            while (true){
+                a = prompt("Nhập số tuổi");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            if (a < 0 || a > 120) {
+                alert("Đây không phải số tuổi. Nếu phải thì thằng này là con gì chứ không phải con người")
+            } else {
+                alert("Đây là số tuổi")
+            }
+        }
+        document.getElementById("btn_ex8").addEventListener("click", isAge);
+
+        //Bài 9
+        function isTriagle() {
+            let a = 0;
+            let b = 0;
+            let c = 0;
+            while (true) {
+                a = prompt("Nhập vào số a");
+                b = prompt("Nhập vào số b");
+                c = prompt("Nhập vào số c");
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            if (a > 0 && b > 0 && c > 0) {
+                let sumab = a + b;
+                let sumac = a + c;
+                let sumbc = b + c;
+                if (sumab > c && sumac > b && sumbc > a) {
+                    alert(a + ", " + b + ", " + c + " là độ dài 3 cạnh của hình tam giác");
+                } else {
+                    alert(a + ", " + b + ", " + c + " không phải độ dài 3 cạnh của hình tam giác");
+                }
+            } else {
+                alert(a + ", " + b + ", " + c + " không phải độ dài 3 cạnh của hình tam giác");
+            }
+        }
+        document.getElementById("btn_ex9").addEventListener("click", isTriagle);
+
+        //Bài 10
+        //Tiền điện = Giá điện x điện năng sử dụng (w)
+        function electricBill() {
+            let a = 0;
+            let b = 0;
+            while (true) {
+                a = prompt("Nhập vào giá điện");
+                b = prompt("Nhập số điện sử dụng");
+                if (isNaN(a) || isNaN(b)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = a*b;
+            alert("Tiền điện phải đóng là " + result);
+        }
+        document.getElementById("btn_ex10").addEventListener("click", electricBill);
+
+        //Bài 11
+        function tax() {
+            let a = 0;
+            while (true) {
+                a = prompt("Nhập vào thu nhập năm nay");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            if (a < 100000000) {
+                alert("Thu nhập năm nay của bạn dưới 100 triệu, khỏi đóng thuế. Ráng năm sau kiếm hơn đi")
+            } else {
+                let result = a * (5/100);
+                alert("Tiền thuế bạn phải đóng là " + result + " nghìn đồng");
+            }
+        }
+        document.getElementById("btn_ex11").addEventListener("click", tax);
+
+        //bài 12
+        function interestMoney() {
+            let a = 0;
+            let b = 0;
+            let c = 0;
+            while (true) {
+                a = parseInt(prompt("Nhập số tiền vay ban đầu"));
+                b = parseInt(prompt("Nhập số tháng cho vay"));
+                c = parseInt(prompt("Nhập lãi suất hàng tháng"));
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            let result = a;
+            for (let i = 1; i <= b; i++) {
+                result += (result/100) * c;
+            }
+            alert("Sau " + b + " tháng, với số tiền gốc " + a + " và lãi suất " + c + "%, bạn sẽ nợ tổng cổng " + result + " đồng")
+        }
+        document.getElementById("btn_ex12").addEventListener("click", interestMoney);
+    </script>
+</body>
+</html>

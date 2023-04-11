@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <script>
+        // Hàm tìm số Fibonacci tại vị trí pos
+        function numbFibo(pos) {
+            let numb1 = 0, numb2 = 1;
+            let numb3 = null;
+            for (let i = 2; i < pos; i++) {
+                numb3 = numb1 + numb2;
+                numb1 = numb2;
+                numb2 = numb3;
+            }
+            return numb3;
+        }
+
+        // In n số Fibonacci
+
+        let text_n = 0 + " " + 1 + " ";
+        let count_n = parseInt(prompt("Bạn muốn in ra bao nhiêu số Fibonacci"));
+        for (let i = 3; i <= count_n; i++) {
+            text_n += numbFibo(i) + " ";
+        }
+        document.write(count_n + " số Fibonacci đầu tiên là: " + text_n + "<br>");
+        document.write("<br>");
+
+        // In 20 Fibonacci tốt đầu tiên
+
+        let text = 0 + " " + 1 + " ";
+        let n = 20;
+        for (let i = 3; i <= n; i++) {
+            text += numbFibo(i) + " ";
+        }
+        document.write("20 số Fibonacci đầu tiên là: " + text + "<br>");
+        document.write("<br>");
+
+        // Tìm số đầu tiên chia hết cho 5
+
+        let count = 3;
+        while (numbFibo(count) % 5 != 0) {
+            count++;
+        }
+        document.write("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là " + numbFibo(count) + "<br>");
+        document.write("<br>");
+
+        // Tính tổng 20 số  Fibonacci đầu tiên
+        let total = 1;
+        for (let i = 3; i <= 20; i++) {
+            total += numbFibo(i);
+        }
+        document.write("Tổng 20 số đầu tiên là " + total + "<br>");
+        document.write("<br>");
+    </script>
+</body>
+</html>

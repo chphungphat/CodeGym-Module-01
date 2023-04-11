@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        class myDate {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+            setDay(input) {
+                this.day = input;
+            }
+            setMonth(input) {
+                this.month = input;
+            }
+            setYear(input) {
+                this.year = input;
+            }
+            setDate(d, m, y) {
+                this.day = d;
+                this.month = m;
+                this.year = y;
+            }
+            toString() {
+                let text = "";
+                function addToText(numb) {
+                    if (numb < 10) {
+                        text += "0" + numb;
+                    } else {
+                        text += numb;
+                    }
+                }
+                addToText(this.day);
+                text += "/";
+                addToText(this.month);
+                text += "/" + this.year;
+                return text;
+            }
+        }
+        let demo = new myDate(3, 7, 2023);
+        document.getElementById("demo1").innerHTML = demo.toString();
+        document.getElementById("demo2").innerHTML = demo.getMonth();
+        demo.setYear(2013);
+        document.getElementById("demo3").innerHTML = demo.getYear();
+        demo.setDate(13, 10, 2025);
+        document.getElementById("demo4").innerHTML = demo.toString();
+    </script>
+</body>
+</html>

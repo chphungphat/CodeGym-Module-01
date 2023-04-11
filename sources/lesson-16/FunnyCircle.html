@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Circle</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3;"></canvas>
+    <script>
+        class Circle {
+            constructor(x, y, radius) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+            }
+            getRadius() {
+                return this.radius;
+            }
+            setCircle(a, b, c) {
+                this.x = a;
+                this.y = b;
+                this.radius = c;
+            }
+            setX(a) {
+                this.x = a;
+            }
+            setY(b) {
+                this.y = b;
+            }
+        }
+        function getRandomHex() {
+            return Math.floor(Math.random() * 255)
+        }
+        function getRandomColor() {
+            let red = getRandomHex();
+            let blue = getRandomHex();
+            let green = getRandomHex();
+            let text = "rgb(" + red + "," + blue + "," + green +")";
+            return text;
+        }
+        function drawCircle() {
+            let h = Math.floor(Math.random() * (1200 - 100) + 100);
+            let v = Math.floor(Math.random() * (650 -100) + 100);
+            let r = Math.floor(Math.random() * (150 - 20) + 20);
+            let color = getRandomColor();
+            let circle = new Circle(h, v, r);
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        setInterval(drawCircle, 1000)
+        
+    </script>
+</body>
+</html>

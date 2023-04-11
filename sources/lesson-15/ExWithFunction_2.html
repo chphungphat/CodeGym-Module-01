@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise with Function 2</title>
+</head>
+<body>
+    <h3>Bài 1</h3>
+    <p>Nhập vào một số nguyên: <input type="number" id="numb_ex1"></p>
+    <p id="result_ex1"></p>
+    <h3>Bài 2</h3>
+    <input type="button" value="Click to run ex2" id="btn_ex2">
+    <p id="result_perimeter"></p>
+    <p id="result_area"></p>
+    <h3>Bài 3</h3>
+    <p>Nhập vào một số nguyên: <input type="number" id="numb_ex3"></p>
+    <p id="result_ex3"></p>
+    <h3>Bài 4</h3>
+    <input type="button" value="Click to run ex4" id="btn_ex4">
+    <p id="result_ex4"></p>
+    <h3>Bài 5</h3>
+    <input type="button" value="Click to run ex5" id="btn_ex5">
+    <p id="result_ex5"></p>
+    <h3>Bài 6</h3>
+    <input type="button" value="Click to run ex6" id="btn_ex6">
+    <p id="result_ex6"></p>
+    <h3>Bài 7</h3>
+    <p>Nhập vào hai số</p>
+    <p>
+        <input type="number" id="numb_ex7_1">
+        <input type="number" id="numb_ex7_2">
+    </p>
+    <input type="button" value="Click to run ex7" id="btn_ex7">
+    <h3>Bài 8</h3>
+    <p>Nhập vào một chuỗi số nguyên: <input type="number" id="numb_ex8"></p>
+    <input type="button" value="Click to run ex8" id="btn_ex8">
+    <p id="result_ex8"></p>
+    <h3>Bài 9</h3>
+    <p>Nhập vào một chuỗi ký tự: <input type="text" id="txt_ex9"></p>
+    <p>Nhập vào một ký tự: <input type="text" id="char_ex9"></p>
+    <input type="button" value="Click to run ex9" id="btn_ex9">
+    <p id="result_ex9"></p>
+
+    <script>
+        //Bài 1
+        function squareOf() {
+            let temp = document.getElementById("numb_ex1").value;
+            temp = temp * temp;
+            document.getElementById("result_ex1").innerHTML = "Giá trị bình phương là " + temp;
+        }
+        document.getElementById("numb_ex1").addEventListener("input", squareOf);
+
+        //Bài 2
+        function Circle() {
+            let radius = prompt("Nhập vào bán kính hình tròn");
+            let perimeter = radius*2*3.14;
+            let area = radius*radius*3.14;
+            document.getElementById("result_perimeter").innerHTML = "Chu vi hình tròn là: " + perimeter;
+            document.getElementById("result_area").innerHTML = "Diện tích hình tròn là: " + area;
+        }
+        document.getElementById("btn_ex2").addEventListener("click", Circle);
+
+        //Bài 3
+        function factorialOf() {
+            let temp = document.getElementById("numb_ex3").value;
+            for (let i = temp - 1; i > 0; i--) {
+                temp *= i;
+            }
+            document.getElementById("result_ex3").innerHTML = "Giá trị giai thừa là " + temp;
+        }
+        document.getElementById("numb_ex3").addEventListener("input", factorialOf);
+
+        //Bài 4
+        function isNumber() {
+            let temp = prompt("Nhập vào ký tự bất kì:");
+            let result = document.getElementById("result_ex4");
+            if (isNaN(temp)) {
+                result.innerHTML = temp + " không phải là số";
+            } else {
+                result.innerHTML = temp + " là số";
+            }
+        }
+        document.getElementById("btn_ex4").addEventListener("click", isNumber);
+
+        //Bài 5
+        function minNumber() {
+            let numb1 = 0;
+            let numb2 = 0;
+            let numb3 = 0;
+            while(true) {
+                numb1 = parseInt(prompt("Nhập vào số nguyên thứ 1:"));
+                numb2 = parseInt(prompt("Nhập vào số nguyên thứ 2:"));
+                numb3 = parseInt(prompt("Nhập vào số nguyên thứ 3:"));
+                if (!(isNaN(numb1) || isNaN(numb2) || isNaN(numb3))) {
+                    break;
+                } else {
+                    alert("NHẬP LẠI");
+                }
+            }
+            let min = 0;
+            if (numb1 <= numb2 && numb1 <= numb3) {
+                min = numb1;
+            } else if (numb2 <= numb1 && numb2 <= numb3) {
+                min = numb2;
+            } else if (numb3 <= numb1 && numb3 <= numb2) {
+                min = numb3;
+            }
+            document.getElementById("result_ex5").innerHTML = min + " là giá trị nhỏ nhất";
+        }
+        document.getElementById("btn_ex5").addEventListener("click", minNumber);
+
+        //Bài 6
+        function isPositiveNumber() {
+            let temp = prompt("Nhập vào số bất kì:");
+            let result = document.getElementById("result_ex6");
+            if (isNaN(temp) && temp >= 0) {
+                result.innerHTML = temp + " là số nguyên dương";
+            } else {
+                result.innerHTML = temp + " không phải là số nguyên dương";
+            }
+        }
+        document.getElementById("btn_ex6").addEventListener("click", isPositiveNumber);
+
+        //Bài 7
+        function swapPlace() {
+            let numb1 = document.getElementById("numb_ex7_1").value;
+            let numb2 = document.getElementById("numb_ex7_2").value;
+            document.getElementById("numb_ex7_1").value = numb2;
+            document.getElementById("numb_ex7_2").value = numb1;
+        }
+        document.getElementById("btn_ex7").addEventListener("click", swapPlace);
+
+        //Bài 8
+        function reverseNumber() {
+            let str = document.getElementById("numb_ex8").value;
+            let arr = str.split("");
+            document.getElementById("result_ex8").innerHTML = arr.reverse();
+        }
+        document.getElementById("btn_ex8").addEventListener("click", reverseNumber);
+
+        //Bài 9
+        function checkChar() {
+            let str = document.getElementById("txt_ex9").value;
+            let char = document.getElementById("char_ex9").value;
+            let result = str.indexOf(char);
+            let out = document.getElementById("result_ex9");
+            if (result == -1) {
+                out.innerHTML = "Không tìm thấy ký tự " + char + " trong chuỗi";
+            } else {
+                out.innerHTML = "Tìm thấy ký tự " + char + " trong chuỗi tại vị trí thứ " + (result + 1);
+            }
+        }
+        document.getElementById("btn_ex9").addEventListener("click", checkChar);
+
+    </script>
+</body>
+</html>

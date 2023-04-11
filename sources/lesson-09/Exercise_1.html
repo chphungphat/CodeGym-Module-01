@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+<body>
+    <h3>Bài 1</h3>
+    <input type="button" value="Click to run ex1" id="btn_ex1">
+    <h3>Bài 2</h3>
+    <input type="button" value="Click to run ex2" id="btn_ex2">
+    <h3>Bài 3</h3>
+    <input type="button" value="Click to run ex3" id="btn_ex3">
+    <h3>Bài 4</h3>
+    <input type="button" value="Click to run ex4" id="btn_ex4">
+    <h3>Bài 5</h3>
+    <input type="button" value="Click to run ex5" id="btn_ex5">
+    <h3>Bài 6</h3>
+    <input type="button" value="Click to run ex6" id="btn_ex6">
+    <h3>Bài 7</h3>
+    <input type="button" value="Click to run ex7" id="btn_ex7">
+    <script>
+        //Bài 1
+        function compareTwoNumb() {
+            let a = 0;
+            let b = 0;
+            while (true){
+                a = prompt("Nhập vào số a");
+                b = prompt("Nhập vào số b");
+                if (isNaN(a) || isNaN(b)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            if (a % b == 0) {
+                alert(a + " chia hết cho " + b);
+            } else {
+                alert(a + " không chia hết cho " + b);
+            }
+        }
+        document.getElementById("btn_ex1").addEventListener("click", compareTwoNumb);
+
+        //Bài 2
+        function isHighSchooler() {
+            let a = 0;
+            while (true) {
+                a = prompt("Nhập vào số tuổi")
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI")
+                } else {
+                    break;
+                }
+            }
+            if (a < 16) {
+                alert("Bạn quá trẻ, chưa đủ tuổi vào lớp 10")
+            } else if (a > 18) {
+                alert("Bạn quá già để học lớp 10")
+            } else {
+                alert("Chào mừng đến với thời gian đẹp nhất của tuổi học trò")
+            }
+        }
+        document.getElementById("btn_ex2").addEventListener("click", isHighSchooler);
+
+        //Bài 3
+        function compareToZero() {
+            let a = 0;
+            while (true) {
+                a = prompt("Nhập vào số bất kì");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            if (a > 0) {
+                alert("số "+ a + " lớn hơn 0");
+            } else if (a < 0) {
+                alert("số "+ a + " nhỏ hơn 0");
+            } else {
+                alert("Bạn vừa nhập số 0");
+            }
+        }
+        document.getElementById("btn_ex3").addEventListener("click", compareToZero)
+
+        //Bài 4
+        function findMaxNumb() {
+            let a = 0;
+            let b = 0;
+            let c = 0;
+            while (true){
+                a = prompt("Nhập vào số a");
+                b = prompt("Nhập vào số b");
+                c = prompt("Nhập vào số c");
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            if (a >= b && a >= c) {
+                alert(a + " là số lớn nhất");
+            } else if (b >= a && b >= c) {
+                alert(b + " là số lớn nhất");
+            } else if (c >= a && c >= b) {
+                alert(c + " là số lớn nhất");
+            }
+        }
+        document.getElementById("btn_ex4").addEventListener("click", findMaxNumb);
+
+        //Bài 5
+        function rankStudent() {
+            let a = 0;
+            let b = 0;
+            let c = 0;
+            while (true){
+                a = prompt("Nhập vào điểm bài kiểm tra");
+                b = prompt("Nhập vào điểm thi giữa kỳ");
+                c = prompt("Nhập vào điểm thi cuối kỳ");
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            //Học lực yếu khi có 1 điểm dưới 5
+            //Học lực trung bình khi cả 3 điểm trên 5 nhưng không có điểm nào trên 8
+            //Học lực khá khi cả 3 điểm trên 5 và có 1 điểm trên 8
+            //Học lực giỏi khi có trên 2 điểm trên 8
+            if (a < 5 || b < 5 || c < 5) {
+                alert("Học lực yếu");
+            } else if (a < 8 && b < 8 && c < 8) {
+                alert("Học lực trung bình");
+            } else if ((a >= 8 && b < 8 && c < 8) || (b >= 8 && c < 8 && a < 8) || (c >= 8 && b < 8 && a < 8)) {
+                alert("Học lực khá");
+            } else {
+                alert("Học lực giỏi");
+            }
+        }
+        document.getElementById("btn_ex5").addEventListener("click", rankStudent);
+
+        //Bài 6
+        function incomeShare() {
+            let a = 0;
+            let b = 0;
+            while (true) {
+                a = prompt("Nhập vào doanh số");
+                if (isNaN(a) && isNaN(b)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            //Nếu doanh số > 10000000 thì hoa hồng bằng 5%
+            //Nếu doanh số > 20000000 thì hoa hồng bằng 8%
+            if (a >= 10000000 && a < 20000000) {
+                alert("Số hoa hồng là " + a*(5/100));
+            } else if (a >= 20000000) {
+                alert("Số hoa hồng là " + a*(8/100));
+            }
+        }
+        document.getElementById("btn_ex6").addEventListener("click", incomeShare)
+
+        //Bài 7
+        function telephoneBill() {
+            let a = 0;
+            while (true) {
+                a = prompt("Nhập vào số phút gọi");
+                if (isNaN(a)) {
+                    alert("NHẬP LẠI");
+                } else {
+                    break;
+                }
+            }
+            //Nếu số phút hơn 100 thì phí bằng 5000 * số phút gọi
+            //Nếu số phút hơn 150 thì phí bằng 4000 * số phút gọi
+            if (a >= 100 && a < 150) {
+                alert("Cước điện thoại là " + a*5000);
+            } else if (a >= 150) {
+                alert("Cước điện thoại là " + a*4000);
+            }
+        }
+        document.getElementById("btn_ex7").addEventListener("click", telephoneBill)
+    </script>
+</body>
+</html>

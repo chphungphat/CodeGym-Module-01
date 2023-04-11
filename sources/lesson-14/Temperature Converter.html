@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1 style="font-weight: 500;">Temeperature Converter</h1>
+    <p>Type a value in the Fahrenheit field to convert the value to Celcius</p>
+    <p>Fahrenhiet <input type="number" width="30px" id="degree"></p>
+    <div>
+        <div style="display: inline;">Celcius:</div>
+        <div style="display: inline;" id="result"></div>
+    </div>
+
+    <script>
+        function Converter() {
+            let tem = document.getElementById("degree").value;
+            let result = (tem - 32)/1.8;
+            document.getElementById("result").innerHTML = result;
+        }
+        document.getElementById("degree").addEventListener("input", Converter);
+    </script>
+</body>
+</html>

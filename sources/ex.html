@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeArray(array, number) {
+            if (number % 2 == 0) {
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] % 2 == 0) {
+                        array[i]++;
+                    }
+                }
+            }
+            if (number % 2 != 0) {
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] % 2 != 0) {
+                        array[i]++;
+                    }
+                }
+            }
+            return array;
+        }
+
+        let array1 = [5, 0, 4, 3, 4, 7, 8 ,2];
+        document.write(changeArray(array1, 2));
+        let array2 = [5, 0, 4, 3, 4, 7, 8 ,2];
+        document.write("<br>");
+        document.write(changeArray(array2, 3));
+    </script>
+</body>
+</html>

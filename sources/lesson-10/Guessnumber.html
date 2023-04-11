@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+</head>
+<body>
+    <button id="start">Let's Play</button>
+    <script>
+        document.getElementById("start").addEventListener("click", Startgame);
+        let lowerLim = null;
+        let upperLim = null;
+        function Startgame() {
+            alert("Nhập vào khoản số duơng bạn lựa chọn");
+            while(true){
+                lowerLim = parseInt(prompt("Nhập số giới hạn duới"));
+                upperLim = parseInt(prompt("Nhập số giới hạn trên"));
+                if (lowerLim < 0 || upperLim <0) {
+                    alert("Nhập số âm sao chơi?? NHẬP LẠI");
+                } else if (lowerLim > upperLim) {
+                    alert("Sao bạn vô tri thế? Giới hạn duới mà lại lớn hơn giới hạn trên. NHẬP LẠI");
+                } else {
+                    alert("Nhập đúng rồi đó. Bắt đầu chơi thôi");
+                    break;
+                }
+            }
+            let count = 1;
+            let random = Math.floor(Math.random() * (upperLim - lowerLim)) + lowerLim;
+            while (count<=3) {
+                let guess = parseInt(prompt("Nhập vào số mà bạn đoán đi"));
+                if (guess == random) {
+                alert("Chúc mừng!! Bạn đoán đúng rồi");
+                break;
+            } else {
+                if (count != 3) {
+                    alert("Nhập sai rồi. Bạn còn " + (3 - count) + " lần thử");
+                } else {
+                    alert("Nhập sai rồi. GAME OVER. Kết quả chính xác là: " + random);
+                }
+                count++;
+            }
+            }
+        }
+    </script>
+</body>
+</html>

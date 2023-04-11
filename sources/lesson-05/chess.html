@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <style>
+        .chess-board {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        .chess-board th {
+            padding: .5em;
+        }
+        .chess-board td {
+            border: 1px solid;
+            width: 2em;
+            height: 2em;
+            border-collapse: collapse;
+        }
+        .chess-board .light {
+            background: white;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <table class="chess-board">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+                <th>h</th>
+            </tr>
+            <tr>
+                <th>8</th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+                <th class="light"></th>
+                <th class="black"></th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+                <th class="dark"></th>
+                <th class="light"></th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

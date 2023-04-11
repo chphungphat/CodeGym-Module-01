@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feet and Meters</title>
+    <style>
+        td {
+            text-align: center;
+        }
+        button {
+            margin-left: 100px;
+        }
+        p {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 600px;">
+        <caption>Convert</caption>
+        <tr>
+           <th>Value</th>
+           <th>From</th>
+           <th>To</th>
+        </tr>
+        <tr>
+           <td><input type="number" id="value"></td>
+           <td>
+                <select name="inputUnit" id="inputUnit">
+                    <option value="Feet">Feet</option>
+                    <option value="Meters">Meters</option>
+                </select>
+           </td>
+           <td>
+                <select name="outputUnit" id="outputUnit">
+                    <option value="Meters">Meters</option>
+                    <option value="Feet">Feet</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button onclick="Conversion()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        let invalue = document.getElementById("value").value;
+        let inunit = document.getElementById("inputUnit").value;
+        let outunit = document.getElementById("outputUnit").value;
+        function footToMeter(value) {
+            return value*0.305;
+        }
+        function meterToFood(value) {
+            return value*3.279;
+        }
+        function Conversion() {
+            
+            if (inunit == "Feet" && outunit == "Meters")
+            {
+                let result = footToMeter(invalue);
+                document.getElementById("result").innerHTML = result;
+            }
+            else {
+                let result = meterToFood(invalue);
+                document.getElementById("result").innerHTML = result;
+            }
+        }     
+    </script>
+</body>
+</html>

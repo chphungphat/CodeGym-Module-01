@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("Bạn muốn in ra bao nhiêu số nguyên tố"));
+        let count = 0;
+        let tempNumber = 2;
+        function isPrimeNumb(a) {
+            let temp = true;
+            if(a != 2) {
+                for (let j = 2; j<a; j++) {
+                    if (a % j  == 0) {
+                        temp = false;
+                        break;
+                    }
+                }
+            }
+            return temp;
+        }
+        while (count < number) {
+            if (isPrimeNumb(tempNumber)) {
+                document.write(tempNumber);
+                document.write("<br>");
+                count++;
+            }
+            tempNumber++;
+        }
+    </script>
+</body>
+</html>

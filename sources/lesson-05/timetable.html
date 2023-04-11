@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        body {
+            margin: auto !important;
+            width: 80%;
+            padding: 10px;
+            text-align: center;
+        }
+        table.para {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table.dat {
+            width: 100%;
+            /* margin-left: auto; */
+            /* margin-right: auto; */
+            text-align: center;
+            border: 1px solid #000;
+        }
+        td.yellow {
+            background-color: yellow;
+            width: 150px;
+            border: 1px solid #000;
+        }
+        .orange {
+            background-color: orange;
+            border: 1px solid #000;
+        }
+        .em {
+            border: 1px solid #000;
+        }
+
+        table, tr, td{
+            border-collapse: collapse;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <h1 style="width: 100%; margin: auto; text-align: center;">THỜI KHÓA BIỂU</h1>
+    <div style="width: 100%;   display: flex; flex-direction: row;">
+        <!-- <table class="para" style="color: blue;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left; width: 300px;">Lớp: C104</td>
+                    <td style="text-align: right; width: 300px;">Thời gian học: 5h - 21h30</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; width: 300px;">Giáo viên: Sirius</td>
+                    <td style="text-align: right; width: 300px;">Ngày học: 3, 5, 7</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; width: 300px;">Phòng học: L71</td>
+                </tr>
+            </tbody>
+        </table> -->
+        <p style="width: 20%; text-align: left; background-color: red;">
+            Lớp: C104 <br>
+            Giáo viên: Sirius<br>
+            Phòng học: L71
+        </p>
+
+        <p style="width: 50%; text-align: right;">
+
+            Lớp: C104 <br>
+            Giáo viên: Sirius <br>
+            Phòng học: L71
+        </p>
+    
+    </div>
+    
+    <table class="dat">
+        <tr>
+            <td colspan="3"></td>
+            <td class="yellow">Thứ 3</td>
+            <td class="yellow">Thứ 5</td>
+            <td class="yellow">Thứ 7</td>
+        </tr>
+        <tr class="orange">
+            <td class="orange">Tuần</td>
+            <td class="orange">Ngày bắt đầu</td>
+            <td class="orange">Ngày kết thúc</td>
+            <td colspan="3" class="orange">Môn học</td>
+        </tr>
+        <tr>
+            <td class="em">01</td>
+            <td class="em">03/03/2021</td>
+            <td class="em">10/03/2021</td>
+            <td class="em">CF - T1, L1</td>
+            <td class="em">CF - T2, L2</td>
+            <td class="em">CF - T3, L3</td>
+        </tr>
+        <tr>
+            <td class="em">02</td>
+            <td class="em">11/03/2021</td>
+            <td class="em">18/03/2021</td>
+            <td class="em">CF - T4, L4</td>
+            <td class="em">CF - Winter Test</td>
+            <td class="em">CF - Endgame</td>
+        </tr>
+        <tr>
+            <td class="em">.....</td>
+            <td class="em">.....</td>
+            <td class="em">.....</td>
+            <td class="em">.....</td>
+            <td class="em">.....</td>
+            <td class="em">.....</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Example</title>
+</head>
+<body>
+    <h1>Bài 1:</h1>
+    <h2>Cách 1:</h2>
+    <p id="ex1_1"></p>
+    <h2>Cách 2:</h2>
+    <p id="ex1_2"></p>
+    <h1>Bài 2:</h1>
+    <h2>Cách 1:</h2>
+    <p id="ex2_1"></p>
+    <h2>Cách 2:</h2>
+    <p id="ex2_2"></p>
+    <h1>Bài 3:</h1>
+    <h2>Cách 1:</h2>
+    <p id="ex3_1"></p>
+    <h2>Cách 2:</h2>
+    <p id="ex3_2"></p>
+    <p id="demo"></p>
+
+    <script>
+        //Bài 1
+        let myColor = ["Red", "Green", "White", "Black"];
+        //Dùng hàm
+        document.getElementById("ex1_1").innerHTML = myColor.toString();
+        //Không dùm hàm
+        let textColor = "";
+        for (let i = 0; i < myColor.length; i++) {
+            textColor += myColor[i] + ",";
+        }
+        document.getElementById("ex1_2").innerHTML = textColor;
+        
+        //Bài 2
+        let innumb = prompt("Nhập vào một chuỗi số");
+        let instr = innumb.toString();
+        //Dùng hàm
+        let outstr = [instr[0]];
+        for (let i = 1; i < instr.length; i++) {
+            if (instr[i]%2==0 && instr[i-1]%2==0) {
+                outstr.push("-", instr[i]);
+            } else {
+                outstr.push(instr[i]);
+            }
+        }
+        document.getElementById("ex2_1").innerHTML = outstr.join("");
+        //Không dùng hàm
+        let textNumb = instr[0];
+        for (let i = 1; i < instr.length; i++) {
+            if (instr[i]%2==0 && instr[i-1]%2==0){
+                textNumb += "-" + instr[i];
+            } else {
+                textNumb += instr[i];
+            }
+        }
+        document.getElementById("ex2_2").innerHTML = textNumb;
+
+        //Bài 3
+        let str = prompt("Nhập vào một chuỗi bất kì");
+        let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let LOWER = "abcdefghijklmnopqrstuvwxyz";
+        //Dùng hàm
+        let str_arr = [];
+        for (let i = 0; i < str.length; i++) {
+            if (UPPER.indexOf(str[i]) !== -1) {
+                str_arr.push(str[i].toLocaleLowerCase());
+            } else if (LOWER.indexOf(str[i]) !== -1) {
+                str_arr.push(str[i].toLocaleUpperCase());
+            } else {
+                str_arr.push(str[i]);
+            }
+        }
+        document.getElementById("ex3_1").innerHTML = str_arr.join("");
+        //Không dùng hàm
+        let str_text = "";
+        function checkLower(char) {
+            for (let i = 0; i < LOWER.length; i++) {
+                if (char == LOWER[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function checkUpper(char) {
+            for (let i = 0; i < UPPER.length; i++) {
+                if (char == UPPER[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        function findIndex(arr, char) {
+            for (let i = 0; i < arr.length; i++) {
+                if (char == arr[i]) {
+                    return i;
+                }
+            }
+        }
+        for (let i = 0; i < str.length; i++) {
+            if (checkLower(str[i])) {
+                str_text += UPPER[findIndex(LOWER, str[i])];
+            } else if (checkUpper(str[i])) {
+                str_text += LOWER[findIndex(UPPER, str[i])];
+            } else {
+                str_text += str[i];
+            }
+        }
+        document.getElementById("ex3_2").innerHTML = str_text;
+    </script>
+</body>
+</html>

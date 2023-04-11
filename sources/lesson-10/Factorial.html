@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial of a number</title>
+</head>
+<body>
+    <script>
+        let n;
+        while(true) {
+            n = parseInt(prompt("Nhập một số nguyên duơng"));
+            if (n > 1)
+                break;
+            else   
+                alert("Nhập số bé hơn 1 thì làm sao mà tính giai thừa. NHẬP LẠI");
+        }
+        let factor = 1;
+        for (let i = 1; i <= n; i++) {
+            factor *= i;
+        }
+        document.write("Giai thừa của " + n + " là: " + factor);
+    </script>
+</body>
+</html>

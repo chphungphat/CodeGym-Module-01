@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        class Circle {
+            constructor(radius) {
+                this.radius = radius;
+            }
+            getRadius() {
+                return this.radius;
+            }
+            getArea() {
+                return this.radius*this.radius*3.14;
+            }
+            setRadius(r) {
+                this.radius = r;
+            }
+        }
+        let c = new Circle(5);
+        let a1 = document.getElementById("demo1");
+        let a2 = document.getElementById("demo2");
+        let a3 = document.getElementById("demo3");
+        a1.innerHTML = c.getRadius();
+        a2.innerHTML = c.getArea();
+        c.setRadius(10);
+        a3.innerHTML = c.getArea();
+    </script>
+</body>
+</html>

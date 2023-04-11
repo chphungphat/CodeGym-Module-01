@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+        class Temperature {
+            constructor(temp) {
+                this.temp = temp;
+            }
+            getTemp() {
+                return this.temp;
+            }
+            setTemp(temp) {
+                this.temp = temp;
+            }
+            toFah() {
+                return this.temp * 1.8 + 32; 
+            }
+            toKelvin() {
+                return this.temp + 273.15;
+            }
+        }
+        let myTemp = new Temperature(25);
+        let result1 = document.getElementById("result1");
+        let result2 = document.getElementById("result2");
+        result1.innerHTML = "25 độ C = " + myTemp.toFah() + " độ F";
+        result2.innerHTML = "25 độ C = " + myTemp.toKelvin() + " độ Kelvin";
+    </script>
+</body>
+</html>

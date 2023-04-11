@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border: 1px outset rgba(172, 172, 194, 0.747);
+            background-color: rgba(206, 238, 248, 0.603);
+            height:50px;
+            width:50px;
+            cursor:pointer;
+            font-size: xx-large;
+        }
+
+        button:hover {
+            background-color: rgba(186, 211, 223, 0.801);
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="table"></p>
+    <input type="button" value="Change value" id="btn">
+
+    <script>
+        let table = document.getElementById('table');
+        let turn = 1;
+        let board = new Array();
+        for (let i = 0; i < 10; i++) {
+            board[i] = new Array();
+            for (let j = 0; j < 10; j++) {
+                board[i][j] = ".";
+            }
+        }
+
+        function createTable() {
+            let text = "";
+            for (let i = 0; i < 10; i++) {
+                text += '<br>';
+                for (let j = 0; j < 10; j++) {
+                    text += '<button>' + board[i][j] +'</button>';
+                }
+            }
+            return text;
+        }
+        table.innerHTML = createTable();
+
+        function changeValue() {
+            turn++;
+            let x = prompt("Nhập vào tọa độ x");
+            let y = prompt('Nhập vào tọa độ y');
+            if (turn % 2 == 0) {
+                board[x][y] = 'X';
+                table.innerHTML = createTable();
+                // if (checkWinner(x, y )) {
+                //     alert('X Thắng');
+                // }
+                alert(checkWinner(x, y));
+            } else {
+                board[x][y] = 'O';
+                table.innerHTML = createTable();
+                if (checkWinner(x, y )) {
+                    alert('O Thắng');
+                }
+            }
+
+        }
+        function checkWinner(x, y) {
+            return (board[x][y] == board[x][y - 1] == board[x][y + 1]) ||
+                (board[x][y] == board[x - 1][y] == board[x + 1][y]) ||
+                (board[x][y] == board[x - 1][y - 1] == board[x + 1][y + 1]) ||
+                (board[x][y] == board[x - 1][y + 1] == board[x + 1][y - 1]);
+        }
+        
+        document.getElementById('btn').addEventListener('click', changeValue);
+    </script>
+</body>
+</html>

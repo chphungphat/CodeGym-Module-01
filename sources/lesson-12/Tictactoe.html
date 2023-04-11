@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border: 1px outset rgba(172, 172, 194, 0.747);
+            background-color: rgba(206, 238, 248, 0.603);
+            height:50px;
+            width:50px;
+            cursor:pointer;
+            font-size: xx-large;
+        }
+
+        input:hover {
+            background-color: rgba(186, 211, 223, 0.801);
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        //Dùng hàm
+        var ticButton = "<input type='button' value='O' id='btn' onclick='changetoX()'>";
+        var tictactoe = [[ticButton, ticButton], [ticButton, ticButton]];
+        var arr = [[1,1],[2,2]];
+        let text = "";
+        for (let i = 0; i < tictactoe.length; i++) {
+            text += tictactoe[i].join("");
+        }
+        document.write(text);
+        function changetoX() {
+            document.getElementById("btn").value = "X";
+        }
+    </script>
+</body>
+</html>

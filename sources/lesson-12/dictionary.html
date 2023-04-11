@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h2>Nhập từ cần tìm kiếm:</h2>
+    <input type="text" name="word" id="word" width="30px">
+    <button id="translate">Dịch</button>
+    <h2>Dùng hàm undexOf():</h2>
+    <p id="result1"></p>
+    <h2>Dùng vòng lặp for</h2>
+    <p id="result2"></p>
+    <script>
+        var printOut1 = document.getElementById("result1");
+        var printOut2 = document.getElementById("result2");
+        var vietWord = ["cam", "chuối", "nho", "táo", "sầu riêng", "dưa luới"];
+        var engWord = ["orange", "banana", "grapesberry", "durian", "kiwi"];
+
+        //Dùng hàm indexOf()
+        function findWord1(word) {
+            let i = engWord.indexOf(word);
+            if (i != -1) {
+                printOut1.innerHTML = vietWord[i];
+            } else {
+                printOut1.innerHTML = "Không tìm thấy từ " + word;
+            }
+        }
+
+        //Không dùng indexOf()
+        function findWord2(word) {
+            for (let i = 0; i <= engWord.length; i++) {
+                if (word == engWord[i]) {
+                    printOut2.innerHTML = vietWord[i];
+                    break;
+                } else if (i == engWord.length - 1) {
+                    printOut2.innerHTML = "Không tìm thấy từ " + word;
+                }
+            }
+        }
+
+        function letDoIt() {
+            let inputtext = document.getElementById("word").value;
+            findWord1(inputtext);
+            findWord2(inputtext);
+        }
+        document.getElementById("translate").addEventListener("click", letDoIt);
+    </script>
+</body>
+</html>

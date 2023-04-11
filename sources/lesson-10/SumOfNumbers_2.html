@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Numbers with while</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let total = 0;
+        let input = parseInt(prompt("Nhập vào một số"));
+        let text = " ";
+        if (input != -1)
+            text += input;
+        while (input != -1) {
+            total += input;
+            input = parseInt(prompt("Nhập số tiếp theo"));
+            if (input != -1)
+                text += " + " + input;
+        }
+        document.getElementById("demo").innerHTML = text + " = " + total;
+    </script>
+</body>
+</html>
