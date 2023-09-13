@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c49faf-f80c-49fd-832d-c60d55e6de06" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Bouncing Ball.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BouncingBattleBomb.css" beforeDir="false" afterPath="$PROJECT_DIR$/BouncingBattleBomb.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BouncingBattleBomb.html" beforeDir="false" afterPath="$PROJECT_DIR$/BouncingBattleBomb.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BouncingBattleBomb.js" beforeDir="false" afterPath="$PROJECT_DIR$/BouncingBattleBomb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +15,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2VKCX3Ap8XphkN1u2eYgO2U8vWx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,7 +31,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/CodeGym/CodeGym-Module-01/sources/Case Study/Bouncing Battle Bomb",
+    "last_opened_file_path": "C:/CodeGym/Bouncing-Battle-Bomb",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,7 +47,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694575422073</updated>
-      <workItem from="1694575424532" duration="1354000" />
+      <workItem from="1694575424532" duration="1446000" />
+      <workItem from="1694576909282" duration="264000" />
     </task>
     <servers />
   </component>
