@@ -1,17 +1,6 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-// function getRandomHex() {
-//     return Math.floor(Math.random() * 255)
-// }
-// function getRandomColor() {
-//     let red = getRandomHex();
-//     let blue = getRandomHex();
-//     let green = getRandomHex();
-//     let text = "rgb(" + red + "," + blue + "," + green +")";
-//     return text;
-// }
-
 //Circle
 let x = canvas.width/2;
 let y = canvas.height/2;

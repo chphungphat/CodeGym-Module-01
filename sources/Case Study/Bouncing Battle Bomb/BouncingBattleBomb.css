@@ -14,3 +14,15 @@ canvas {
 h1 {
     text-align: center;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.main_text {
+    text-decoration-line: underline;
+    font-weight: bold;
+}
